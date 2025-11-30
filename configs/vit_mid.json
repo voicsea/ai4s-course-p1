@@ -1,0 +1,27 @@
+{
+    "model_name": "vit_unet",
+    "model_kwargs": {
+        "pretrained": true,
+        "dropout": 0.1
+    },
+    "num_epochs": 10,
+    "batch_size": 2,
+    "learning_rate": 2e-4,
+    "weight_decay": 1e-4,
+    "optimizer_name": "adamw",
+    "scheduler_name": "cosine",
+    "scheduler_kwargs": {},
+    "pixel_loss": "l1",
+    "gradient_loss": "gradient",
+    "pixel_weight": 1.0,
+    "gradient_weight": 0.5,
+    "data_root": "../../ImageToDEM/singleRGBNormalization",
+    "test_root": "../../ImageToDEM/singleRGBNormalizationTest",
+    "train_val_split": 0.1,
+    "num_workers": 4,
+    "pin_memory": true,
+    "input_size": 512,
+    "checkpoint_dir": "./checkpoints/vit_unet_mid",
+    "save_frequency": 2,
+    "device": "cuda"
+}

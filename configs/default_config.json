@@ -1,0 +1,29 @@
+{
+    "model_name": "resnet_unet",
+    "model_kwargs": {},
+    "num_epochs": 50,
+    "batch_size": 16,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "optimizer_name": "adamw",
+    "scheduler_name": "reduce_on_plateau",
+    "scheduler_kwargs": {
+        "mode": "min",
+        "factor": 0.5,
+        "patience": 5,
+        "verbose": true
+    },
+    "pixel_loss": "l1",
+    "gradient_loss": "gradient",
+    "pixel_weight": 1.0,
+    "gradient_weight": 0.5,
+    "data_root": "../../ImageToDEM/singleRGBNormalization",
+    "test_root": "../../ImageToDEM/singleRGBNormalizationTest",
+    "train_val_split": 0.1,
+    "num_workers": 4,
+    "pin_memory": true,
+    "input_size": 512,
+    "checkpoint_dir": "./checkpoints",
+    "save_frequency": 5,
+    "device": "cuda"
+}
